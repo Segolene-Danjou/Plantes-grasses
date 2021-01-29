@@ -5,10 +5,25 @@ body {
   em {
     font-style: italic;
   }
+
+  .basket__section {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgrey;
+  }
   
   header, footer {
     color: white;
   }
+
+  .header {
+    z-index: 10;
+  }
+
+  .header,
+.footer {
+  color: white;
+}
 
   header {
       position: fixed;
@@ -16,6 +31,22 @@ body {
       right: 0;
       left: 0;
       z-index: 1;
+  }
+
+  .basket__main {
+    width: 90%;
+    max-width: 600px;
+    margin: 150px auto 1rem auto;
+  }
+
+  .section__title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer {
+    font-size: 0.8rem;
   }
   
   .title {
@@ -27,6 +58,24 @@ body {
   
   .title__desc {
     font-size: 1rem;
+  }
+
+  .header__title {
+    background-color: #215a47;
+    font-size: 2.3rem;
+    padding: 0.5em;
+    font-weight: 700;
+  }
+  
+  .header__title__detail {
+    font-size: 0.8rem;
+  }
+  
+  .header__subtitle,
+  .footer {
+    background-color: #21ac47;
+    text-align: center;
+    padding: 0.8em 0;
   }
   
   h2 {
@@ -154,3 +203,200 @@ body {
   }
 
 
+
+/* Début tableau */
+
+.cart {
+  box-shadow: 0px 4px 8px 0px rgb(218 218 218);
+  text-align: center;
+  width: 100%;
+}
+
+.cart__header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid lightgrey;
+}
+
+.cart__header th,
+.cart__row td,
+.cart__footer td {
+  padding: 0.5rem 1rem;
+}
+
+.cart__amount-input {
+  width: 3rem;
+}
+
+.cart__delete {
+  text-decoration: underline;
+  color:#215a47;
+  font-size: 0.8rem;
+}
+
+.cart__footer,
+.amount__legend {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.cart__footer__total,
+.amount__value {
+  font-size: 1.5rem;
+  color: #215a47;
+  font-weight: bold;
+}
+
+/* Fin tableau */
+
+/* Début formulaire */
+
+section {
+  border-bottom: 1px solid lightgrey;
+}
+
+fieldset {
+  margin-bottom: 1rem;
+}
+
+/* label en display block afin
+que chaque input soit sur sa ligne */
+label {
+  display: block;
+  padding: 0.25rem 0;
+}
+
+/* on va faire une seule flexbox pour nos 2 colonnes */
+.fieldsets__container {
+  display: flex;
+  flex-direction: column;
+}
+
+legend {
+  color: grey;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+/* une classe utilitaire pour les input et la textarea */
+.full-width-input {
+  margin-top: 0.5rem;
+  width: 100%;
+  background-color: #f8f8f8;
+  /* on remet a 0 les bordures par défaut de l'input */
+  border: none;
+  /* puis on met une bordure en bas */
+  border-bottom: 1px solid #dadada;
+  /* hauter de ligne : 1.5 x taille du texte */
+  line-height: 1.5em;
+}
+
+/* Fin formulaire */
+
+button {
+margin: 1rem;
+}
+
+.section-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-buttons__item {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #dadada;
+  border: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.section-buttons__item:first-child {
+  margin-bottom: 1rem;
+}
+
+.section-buttons__item:hover {
+  background-color: black;
+  color: #dadada;
+  transition: background-color 1s ease-in;
+}
+
+/*
+  on cible un élement de classe
+  .section-buttons__item
+  et qui possède l'attribut type
+  avec pour valeur submit
+  */
+.section-buttons__item[type="submit"] {
+  background-color: #215a47;
+  color: white;
+}
+
+.section-buttons__item[type="submit"]:hover {
+  background-color: white;
+  color: #215a47;
+}
+
+.amount {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 4px 8px 0px rgb(218 218 218);
+}
+
+/* applique ce CSS si l'écran est plus grand que 768px (largeur) */
+@media (min-width: 768px) {
+  /* on remet le header en fixe... */
+  header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+
+  /* on redécale le main de 120px (taille du header..) */
+  main {
+    margin-top: 120px;
+  }
+
+  /*
+    on remet la flexbox du form en "wrap"
+    ce qui veut dire que les colonnes se mettront à la suite
+  */
+  .fieldsets__container {
+    flex-wrap: wrap;
+    height: 370px;
+  }
+
+  /* un fieldset fait 50% du parent (pour le wrap du flexbox) */
+  fieldset {
+    width: 50%;
+  }
+
+  /* on remet la pub.. */
+  .fixed__sales {
+    display: block;
+  }
+
+  .section-buttons__item  {
+    /*
+      width: auto : valeur par défaut,
+      prend la largeur du contenu
+      ici j'ai besoin de l'écrire,
+      car il faut écraser la valeur de base
+    */
+    width: auto;
+  }
+
+}
+
+/* exemple de media query pour cibler le print */
+@media print {
+  header, footer {
+    display: none;
+  }
+}

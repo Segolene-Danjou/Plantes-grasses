@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantes grasses - Panier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css" />
+
+  </head>
+  <body>
+    <!-- le header -->
+    <header class="header">
+      <h1 class="title">
+        Plantes grasses
+      </h1>
+
+      <h2 class="header__subtitle">
+        Votre panier <em>3 produits</em>
+      </h2>
+    </header>
+    <main class="basket__main">
+      <form>
+        <section class="basket__section">
+          <h3 class="section__title">Votre panier</h3>
+          <table class="cart">
+            <thead class="cart__header">
+              <th>Plante</th>
+              <th>Prix unitaire</th>
+              <th>Quantité</th>
+            </thead>
+            <tbody>
+              <tr class="cart__row">
+                <td>Aeonium 'Sunburst'</td>
+                <td>5 €</td>
+                <td>
+                  <input class="cart__amount-input" type="number" value="1" />
+                  <a class="cart__delete" href="#">supprimer</a>
+                </td>
+              </tr>
+              <tr class="cart__row">
+                <td>Agave Victoriae reginae</td>
+                  <td>10 €</td>
+                  <td>
+                    <input class="cart__amount-input" type="number" value="1" />
+                    <a class="cart__delete" href="#">supprimer</a>
+                  </td>
+              </tr>
+              <tr class="cart__row">
+                <td>Haworthia 'Enon'</td>
+                  <td>5,25 €</td>
+                  <td>
+                    <input class="cart__amount-input" type="number" value="1" />
+                    <a class="cart__delete" href="#">supprimer</a>
+                  </td>
+              </tr>
+            </tbody>
+            <tfoot class="cart__footer">
+              <td colspan="2">Total de la commande :</td>
+              <td class="cart__footer__total">20,25 €</td>
+            </tfoot>
+          </table>
+        </section>
+        <br />
+        <section>
+          <h3 class="section__title">Préférences de livraison</h3>
+          <div class="fieldsets__container">
+          <fieldset>
+            <legend>Où souhaitez vous être livré ?</legend>
+            <label>
+              <input value="current" type="radio" name="shipping" />
+              Mon adresse courante
+            </label>
+            <label>
+              <input value="other" type="radio" name="shipping" />
+              Autre adresse
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Options</legend>
+            <label>
+              <input name="delivery-tracking" type="checkbox" />
+              Suivi de livraison par sms (inclus)
+            </label>
+            <label>
+              <input name="satisfaction" type="checkbox" />
+              Pot en terre cuite (+1 euros)
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Adresse</legend>
+            <label>
+              Rue
+              <input class="full-width-input" type="text" name="street" />
+            </label>
+            <label>
+              Code Postal
+              <input class="full-width-input" type="number" name="zip" />
+            </label>
+            <label>
+              Ville
+              <input class="full-width-input" type="text" name="city" />
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Informations complémentaires</legend>
+            <label>
+              Intephone, bâtiment, etc.
+              <textarea class="full-width-input"></textarea>
+            </label>
+          </fieldset>
+        </div>
+        </section>
+        <section>
+          <div class="amount">
+            <span class="amount__legend">Montant total à régler :</span>
+            <span class="amount__value">20.25 €</span>
+          </div>
+        </section>
+        <section class="section-buttons">
+          <button class="section-buttons__item">Continuer vos achats</button>
+          <button class="section-buttons__item" type="submit">Valider et payer</button>
+        </section>
+      </form>
+    </main>
+    <footer class="footer">
+      Plantes grasses - toutes les images sont sous copyright Arrée succulentes
+    </footer>
+    <div class="fixed-sales">Soldes</div>
+  </body>
+</html>
